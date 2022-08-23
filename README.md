@@ -19,7 +19,7 @@
 
 - 将Duck.php wechat.php 放到环境里
 - 更改wechat.php 里下图信息
-- ![](assets/image-20220823190926225.png)
+- ![image-20220823190614380](assets/image-20220823190614380.png)
 
 ### 自动发送
 
