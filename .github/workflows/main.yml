@@ -30,7 +30,7 @@ jobs:
       - name: install php
         run: |
           sudo apt-get install php -y
-          cp ./* /root
+          sudo cp ./* /root
           php /root/wechat.php
       
 
