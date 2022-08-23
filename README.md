@@ -13,19 +13,19 @@
 
 - [和风天气](https://console.qweather.com/#/apps)
 - 创建应用 并获取到KEY（等下会使用）
-- ![image-20220823185853186](https://guaimiu-1251795976.cos.ap-chengdu.myqcloud.com/img/202208231947734.png)
+- ![image-20220823185853186](assets/image-20220823185853186.png)
 
 3、准备好本地PHP运行环境（可以使用phpstudy xampp等，只要能运行就行）或线上PHP运行环境
 
 - 将Duck.php wechat.php 放到环境里
 - 更改wechat.php 里下图信息
-- ![image-20220823190614380](https://guaimiu-1251795976.cos.ap-chengdu.myqcloud.com/img/202208231948876.png)
+- ![](assets/image-20220823190926225.png)
 
-### 定时发送
+### 自动发送
 
 1. 可以使用bt的计划任务添加定时访问url 或 定时shell 脚本定时发送
 
-   EG:![image-20220823191217969](https://guaimiu-1251795976.cos.ap-chengdu.myqcloud.com/img/202208231947902.png)
+   EG:![image-20220823191217969](assets/image-20220823191217969.png)
 
    也可以使用linux下的crontab
 
@@ -37,7 +37,7 @@
 
 ### 效果
 
-![demo](https://guaimiu-1251795976.cos.ap-chengdu.myqcloud.com/img/202208231948970.png)
+![demo](assets/demo.png)
 
 ### 模板代码
 
@@ -56,5 +56,4 @@
 
 复制到
 
-![image-20220823190926225](https://guaimiu-1251795976.cos.ap-chengdu.myqcloud.com/img/202208231948013.png)
-
+![image-20220823190926225](assets/image-20220823190926225.png)
