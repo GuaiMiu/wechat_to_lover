@@ -6,7 +6,7 @@
 
 1、注册微信公众号平台。
 
-- [微信公众号平台]([https://mp.weixin.qq.com/debug/cgi-bin/sandboxinfo?action=showinfo&t=sandbox/index])
+- [微信公众号平台](https://mp.weixin.qq.com/debug/cgi-bin/sandboxinfo?action=showinfo&t=sandbox/index)
 - 获取appID appsecret（等下会使用）
 
 2、注册和风天气并申请为个人开发者
