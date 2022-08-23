@@ -6,7 +6,7 @@
 
 1、注册微信公众号平台。
 
-- [微信公众号平台]([https://mp.weixin.qq.com/debug/cgi-bin/sandboxinfo?action=showinfo&t=sandbox/index])
+- [微信公众号平台](https://mp.weixin.qq.com/debug/cgi-bin/sandboxinfo?action=showinfo&t=sandbox/index)
 - 获取appID appsecret（等下会使用）
 
 2、注册和风天气并申请为个人开发者
@@ -17,17 +17,28 @@
 
 3、准备好本地PHP运行环境（可以使用phpstudy xampp等，只要能运行就行）或线上PHP运行环境
 
-- 将Duck.php wechat.php 放到环境里
-- 更改wechat.php 里下图信息
-- ![image-20220823190614380](assets/image-20220823190614380.png)
+- 将Duck.php wechat.php config.ini放到环境里
+- 更改config.ini里下图信息
+- ![image-20220824091806716](assets/image-20220824091806716.png)
 
 ### 自动发送
 
-1. 可以使用bt的计划任务添加定时访问url 或 定时shell 脚本定时发送
+#### 免费定时发送（Gihub Action）
 
-   EG:![image-20220823191217969](assets/image-20220823191217969.png)
+1. 在写了在写了
 
-   也可以使用linux下的crontab
+
+
+##### 自建或购买服务器
+
+1. 可以使用bt的计划任务添加定时访问url 或 定时shell 脚本定时发送 也可以使用linux下的crontab
+
+EG:![image-20220823191217969](assets/image-20220823191217969.png)
+
+
+
+
+
 
 
 ### 注意

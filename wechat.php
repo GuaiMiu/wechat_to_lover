@@ -8,37 +8,10 @@
  */
 echo @$_GET['echostr'];
 require_once 'Duck.php';
-/**
- *微信
- */
-$APPID = '';
-$APPSECRET = '';
-/**
- * 和风天气的key
- * 自建应用获取
- */
-$HEFENGKEY = '';
-/**
- * 和风天气的城市代码
- * 到下面链接查询城市代码
- * https://github.com/qwd/LocationList/blob/master/China-City-List-latest.csv
- */
-$HEFENGCITY = '101270101';//
-/**
- * 和男/女朋友在一起的日期
- */
-$TOGTERDAYS = '2022-6-10 22:00';
-/**
- * 女朋友生日
- */
-$BIRTHDAY = '2001-10-05';
-/**
- * 男朋友生日
- */
-$BIRTHDAY2 = '2000-04-19';
 
-
-$start = new Duck($APPID, $APPSECRET, $HEFENGKEY, $HEFENGCITY,$TOGTERDAYS,$BIRTHDAY);
+$config = getConfig('config.ini');
+$start = new Duck($config);
+var_dump($config);
     $data = [
         'touser' => '',
         'template_id' => $start->getTemplateList()['template_list'][0]['template_id'],//默认只给第一个模板发消息
@@ -83,7 +56,7 @@ $start = new Duck($APPID, $APPSECRET, $HEFENGKEY, $HEFENGCITY,$TOGTERDAYS,$BIRTH
                 'color' => '#fdb3b0'
             ],
             'birthday2' => [//第二个人的生日
-                'value' => $start->getBirthday($BIRTHDAY2),
+                'value' => $start->getBirthday($config['birthday2']),
                 'color' => '#a594de'
             ],
             'togetherdays' => [//在一起多久了
@@ -93,14 +66,34 @@ $start = new Duck($APPID, $APPSECRET, $HEFENGKEY, $HEFENGCITY,$TOGTERDAYS,$BIRTH
         ],
     ];
 
-
+/**
+ * 启动点
+ */
 foreach ($start->getUserList()['data']['openid'] as $user)
 {
     $data['touser'] = $user;
     $start->sendTemplateMessage(json_encode($data));
 }
 
-var_dump($start->getIndices()['daily']);
-//echo $start->getBirthday();
 
+
+
+
+function getConfig($path)
+{
+    $file = fopen($path,"r");
+    while(!feof($file))
+    {
+        $data =  fgets($file);
+        $data = trim($data);
+        //$data = preg_replace('# #','',$data);
+        //parse_str($configdata,$arrconfig);
+        $datalist = explode('=',$data);
+        $datalist[0] = trim($datalist[0]);
+        $datalist[1] = trim($datalist[1]);
+
+        $configdata[$datalist[0]] =$datalist[1];
+    }
+    return $configdata;
+}
  ?>

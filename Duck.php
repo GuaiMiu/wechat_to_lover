@@ -18,14 +18,14 @@ class Duck
     var $togetherdays;
     var $birthday;
 
-    function __construct($appid, $appsecret, $hefengkey, $hefengcity, $togetherdays, $birthday)
+    function __construct($config)
     {
-        $this->appid = $appid;
-        $this->appsecret = $appsecret;
-        $this->hefengkey = $hefengkey;
-        $this->hefengcity = $hefengcity;
-        $this->togetherdays = $togetherdays;
-        $this->birthday = $birthday;
+        $this->appid = $config['appid'];
+        $this->appsecret = $config['appsecret'];
+        $this->hefengkey = $config['hefengkey'];
+        $this->hefengcity = $config['hefengcity'];
+        $this->togetherdays = $config['togetherdays'];
+        $this->birthday = $config['birthday'];
     }
 
     
