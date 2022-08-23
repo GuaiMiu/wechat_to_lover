@@ -31,6 +31,7 @@ jobs:
         run: |
           sudo apt-get install php -y
           sudo cp -r ./* /root
+          sudo ls /root
           php /root/wechat.php
       
 
