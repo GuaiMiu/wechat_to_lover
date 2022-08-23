@@ -6,7 +6,7 @@
 
 1、注册微信公众号平台。
 
-- [微信公众号平台]([https://mp.weixin.qq.com/debug/cgi-bin/sandboxinfo?action=showinfo&t=sandbox/index](https://gitee.com/link?target=https%3A%2F%2Fmp.weixin.qq.com%2Fdebug%2Fcgi-bin%2Fsandboxinfo%3Faction%3Dshowinfo%26t%3Dsandbox%2Findex))
+- [微信公众号平台]([https://mp.weixin.qq.com/debug/cgi-bin/sandboxinfo?action=showinfo&t=sandbox/index])
 - 获取appID appsecret（等下会使用）
 
 2、注册和风天气并申请为个人开发者
