@@ -23,9 +23,49 @@
 
 ### 自动发送
 
-#### 免费定时发送（Gihub Action）
+#### 免费定时发送 天气信息给女朋友（Gihub Action）
 
-1. 在写了在写了
+1. 注册Github
+
+2. fork 本库 [[wechat_to_lover]](https://github.com/GuaiMiu/wechat_to_lover)![image-20220824193426793](assets/image-20220824193426793.png)
+
+3. 点击Settings![image-20220824193557306](assets/image-20220824193557306.png)
+
+4. 点击Secrets =>Actions![image-20220824193706078](assets/image-20220824193706078.png)
+
+5. 点击![image-20220824193803480](assets/image-20220824193803480.png)
+
+6. 新建配置项![image-20220824194053838](assets/image-20220824194053838.png)
+
+7. 依次添加一下信息
+
+   ```
+   #微信配置
+   appid 
+   appsecret 
+   
+   #和风天气
+   #key
+   
+   hefengkey 
+   #城市代码  https://github.com/qwd/LocationList/blob/master/China-City-List-latest.csv
+   hefengcity 
+   
+   #和他/她在一起的时间 EG: togetherdays = 2022-6-10 22:00
+   togetherdays 
+   
+   #第一个人的生日(出生日期) EG: birthday = 2001-10-05
+   birthday 
+   
+   #第二个人的生日(出生日期) EG: birthday = 2000-04-19
+   birthday2 
+   ```
+
+8. 添加后能看到自己所添加的配置项![image-20220824194131014](assets/image-20220824194131014.png)
+
+9. 然后点击 注:第一次会提示什么（忘了），反正同意就行![image-20220824194201784](assets/image-20220824194201784.png)
+
+10. 点击CI 点击RUN就能运行测试了![image-20220824194710970](assets/image-20220824194710970.png)
 
 
 
