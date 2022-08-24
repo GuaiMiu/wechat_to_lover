@@ -44,7 +44,8 @@ jobs:
           sudo chmod -Rf 777 /root
           sudo rm -Rf /root/config.ini
       - name: set config
-        run: |    
+        run: |
+          sudo ls /root
           sudo echo "appid="$appid > /root/config.ini
           sudo echo "appsecret="$appsecret >> /root/config.ini
           sudo echo "hefengkey="$hefengkey >> /root/config.ini
