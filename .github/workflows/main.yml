@@ -45,7 +45,6 @@ jobs:
           sudo rm -Rf /root/config.ini
       - name: set config
         run: |
-          sudo ls /root
           sudo echo "appid="$appid > /root/config.ini
           sudo echo "appsecret="$appsecret >> /root/config.ini
           sudo echo "hefengkey="$hefengkey >> /root/config.ini
@@ -53,6 +52,7 @@ jobs:
           sudo echo "togetherdays="$togetherdays >> /root/config.ini
           sudo echo "birthday="$birthday >> /root/config.ini
           sudo echo "birthday2="$birthday2 >> /root/config.ini
+          sudo ls /root
       - name: start
         run: |
           sudo cat /root/config.ini
