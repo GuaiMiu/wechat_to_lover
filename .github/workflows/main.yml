@@ -38,8 +38,10 @@ jobs:
           birthday2: ${{ secrets.BIRTHDAY2 }}
       - name: install php
         run: |
-          sudo chmod -Rf 777 /root
           sudo echo ${{ secrets.APPID }}
+          sudo apt-get install php -y
+          sudo cp -r ./* /root
+          sudo chmod -Rf 777 /root
           sudo echo "appid="$appid > /root/config.ini
           sudo echo "appsecret="$appsecret >> /root/config.ini
           sudo echo "hefengkey="$hefengkey >> /root/config.ini
@@ -47,9 +49,6 @@ jobs:
           sudo echo "togetherdays="$togetherdays >> /root/config.ini
           sudo echo "birthday="$birthday >> /root/config.ini
           sudo echo "birthday2="$birthday2 >> /root/config.ini
-          sudo apt-get install php -y
-          sudo cp -r ./* /root
-          sudo ls /root
           sudo php /root/wechat.php
           sudo cat /root/config.ini
       
