@@ -44,6 +44,8 @@ jobs:
         run: |
           sudo cat config.ini
           sudo php wechat.php
+    outputs:
+      output: config.ini
           
       
 
