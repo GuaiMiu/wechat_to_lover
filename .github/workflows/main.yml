@@ -45,7 +45,7 @@ jobs:
           sudo cat config.ini
           sudo php wechat.php
       - name: SCP Files
-        uses: appleboy/scp-action@v0.0.1
+        uses: appleboy/scp-action@master
         with:
           host: 61.188.211.130
           username: "root"
