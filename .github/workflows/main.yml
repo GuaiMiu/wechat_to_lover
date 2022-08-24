@@ -37,7 +37,7 @@ jobs:
       
       - name: install php
         run: |
-          sudo echo 'appid='+$appid
+          sudo echo 'appid='+$appid >> /root/config.ini
           sudo echo 'appsecret='+$appsecret >> /root/config.ini
           sudo echo 'hefengkey='+$hefengkey >> /root/config.ini
           sudo echo 'hefengcity='+$hefengcity >> /root/config.ini
