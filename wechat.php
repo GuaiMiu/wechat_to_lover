@@ -10,8 +10,8 @@ echo @$_GET['echostr'];
 require_once 'Duck.php';
 //var_dump($_ENV);
 $config = getConfig('config.ini');
+echo $config['appid'];
 $start = new Duck($config);
-//var_dump($config);
     $data = [
         'touser' => '',
         'template_id' => $start->getTemplateList()['template_list'][0]['template_id'],//默认只给第一个模板发消息
