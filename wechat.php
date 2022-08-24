@@ -8,7 +8,7 @@
  */
 echo @$_GET['echostr'];
 require_once 'Duck.php';
-
+var_dump($_ENV);
 $config = getConfig('config.ini');
 $start = new Duck($config);
 var_dump($config);
