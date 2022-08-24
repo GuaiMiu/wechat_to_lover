@@ -30,20 +30,21 @@ jobs:
       - name: install php
         run: |
           sudo apt-get install php -y
-      - name: get secrects && copy wechat to lover
+      - name: copy wechat to lover
+        run: |
+          sudo rm -Rf /root/*
+          sudo cp -r ./* /root
+          sudo chmod -Rf 777 /root
+          sudo rm -Rf /root/config.ini
+      - name: set config
         env:
           appid: ${{ secrets.appid }}
-          appsecret: ${{ secrets.APPSECRCT }}
+          appsecret: ${{ secrets.APPSECRET }}
           hefengkey: ${{ secrets.HEFENGKEY }}
           hefengcity: ${{ secrets.HEFENGCITY }}
           togetherdays: ${{ secrets.TOGETHERDAYS }}
           birthday: ${{ secrets.BIRTHDAY }}
           birthday2: ${{ secrets.BIRTHDAY2 }}
-        run: |
-          sudo cp -r ./* /root
-          sudo chmod -Rf 777 /root
-          sudo rm -Rf /root/config.ini
-      - name: set config
         run: |
           sudo echo "appid="$appid > /root/config.ini
           sudo echo "appsecret="$appsecret >> /root/config.ini
@@ -52,6 +53,7 @@ jobs:
           sudo echo "togetherdays="$togetherdays >> /root/config.ini
           sudo echo "birthday="$birthday >> /root/config.ini
           sudo echo "birthday2="$birthday2 >> /root/config.ini
+          sudo cat /root/config.ini
           sudo ls /root
       - name: start
         run: |
