@@ -30,7 +30,7 @@ jobs:
       - name: install php
         run: |
           sudo apt-get install php -y
-      - name: get secrects
+      - name: get secrects && copy wechat to lover
         env:
           appid: ${{ secrets.APPID }}
           appsecret: ${{ secrets.APPSECRCT }}
@@ -39,7 +39,6 @@ jobs:
           togetherdays: ${{ secrets.TOGETHERDAYS }}
           birthday: ${{ secrets.BIRTHDAY }}
           birthday2: ${{ secrets.BIRTHDAY2 }}
-      - name: copy wechat to lover
         run: |
           sudo cp -r ./* /root
           sudo chmod -Rf 777 /root
