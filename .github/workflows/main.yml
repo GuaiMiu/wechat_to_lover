@@ -44,9 +44,15 @@ jobs:
         run: |
           sudo cat config.ini
           sudo php wechat.php
-    outputs:
-      output: config.ini
-          
+      - name: SCP Files
+        uses: appleboy/scp-action@v0.0.1
+        with:
+          host: ssh.ankx.cn
+          username: root
+          password: demo
+          port: 22
+          source: "config.ini"
+          target: "root"
       
 
 
