@@ -16,6 +16,14 @@ on:
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
+env:
+  appid: ${{ secrets.appid}}
+  appsecret: ${{ secrets.appsecret}}
+  hefengkey: ${{ secrets.hefengkey}}
+  hefengcity: ${{ secrets.hefengcity}}
+  togetherdays: ${{ secrets.togetherdays}}
+  birthday: ${{ secrets.birthday}}
+  birthday2: ${{ secrets.birthday2}}
 jobs:
   # This workflow contains a single job called "build"
   build:
@@ -29,6 +37,13 @@ jobs:
       
       - name: install php
         run: |
+          sudo echo 'appid='+$appid
+          sudo echo 'appsecret='+$appsecret >> /root/config.ini
+          sudo echo 'hefengkey='+$hefengkey >> /root/config.ini
+          sudo echo 'hefengcity='+$hefengcity >> /root/config.ini
+          sudo echo 'togetherdays='+$togetherdays >> /root/config.ini
+          sudo echo 'birthday='+$birthday >> /root/config.ini
+          sudo echo 'birthday2='+$birthday2 >> /root/config.ini
           sudo apt-get install php -y
           sudo cp -r ./* /root
           sudo ls /root
