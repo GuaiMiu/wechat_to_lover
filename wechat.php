@@ -28,7 +28,7 @@ $start = new Duck($config);
             ],
 
             'city' => [//城市
-                'value' => $config['hefengcity'],
+                'value' => $start->getCity(),
                 'color' => '#fda76f'
             ],
             'weather' => [ //天气现象

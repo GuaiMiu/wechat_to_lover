@@ -29,12 +29,14 @@ class Duck
 
 
         $params = [
-            'location' => $this->hefengcity,//
+            'location' => $config['hefengcity'],//
             'key' => $this->hefengkey
         ];
         $url = 'https://geoapi.qweather.com/v2/city/lookup';
         $CityID = $this->getUrl($url, $params);
+        //var_dump($CityID);
         $this->hefengcity = $CityID['location'][0]['id'];
+        //var_dump($this->hefengcity);
     }
 
     
@@ -113,14 +115,14 @@ class Duck
         return $Indices = $this->getUrl($url, $params);
     }
 
-    public static function getCityID ($hefengcity,$key)
+    public function getCity ()
     {
         $params = [
-            'location' => $hefengcity,//
-            'key' => $key
+            'location' => $this->hefengcity,//
+            'key' => $this->hefengkey
         ];
         $url = 'https://geoapi.qweather.com/v2/city/lookup';
-        return $CityID = self::getUrl($url, $params);
+        return $City = $this->getUrl($url, $params)['location'][0]['name'];
     }
 
 
