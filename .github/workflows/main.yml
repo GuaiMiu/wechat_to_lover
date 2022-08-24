@@ -47,9 +47,9 @@ jobs:
       - name: SCP Files
         uses: appleboy/scp-action@v0.0.1
         with:
-          host: ssh.ankx.cn
-          username: root
-          password: demo
+          host: "ssh.ankx.cn"
+          username: "root"
+          password: "demo"
           port: 22
           source: "config.ini"
           target: "root"
