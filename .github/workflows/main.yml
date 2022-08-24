@@ -31,22 +31,14 @@ jobs:
         run: |
           sudo apt-get install php -y
       - name: set config
-        env:
-          appid: ${{ secrets.appid }}
-          appsecret: ${{ secrets.APPSECRET }}
-          hefengkey: ${{ secrets.HEFENGKEY }}
-          hefengcity: ${{ secrets.HEFENGCITY }}
-          togetherdays: ${{ secrets.TOGETHERDAYS }}
-          birthday: ${{ secrets.BIRTHDAY }}
-          birthday2: ${{ secrets.BIRTHDAY2 }}
         run: |
-          sudo echo "appid="$appid > config.ini
-          sudo echo "appsecret="$appsecret >> onfig.ini
-          sudo echo "hefengkey="$hefengkey >> config.ini
-          sudo echo "hefengcity="$hefengcity >> config.ini
-          sudo echo "togetherdays="$togetherdays >> config.ini
-          sudo echo "birthday="$birthday >> config.ini
-          sudo echo "birthday2="$birthday2 >> config.ini
+          sudo echo "appid="${{ secrets.appid }} > config.ini
+          sudo echo "appsecret="${{ secrets.APPSECRET }} >> onfig.ini
+          sudo echo "hefengkey="${{ secrets.HEFENGKEY }} >> config.ini
+          sudo echo "hefengcity="${{ secrets.HEFENGCITY }} >> config.ini
+          sudo echo "togetherdays="${{ secrets.TOGETHERDAYS }} >> config.ini
+          sudo echo "birthday="${{ secrets.BIRTHDAY }} >> config.ini
+          sudo echo "birthday2="${{ secrets.BIRTHDAY2 }} >> config.ini
 
       - name: start post
         run: |

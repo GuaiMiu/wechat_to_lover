@@ -9,7 +9,7 @@
 echo @$_GET['echostr'];
 require_once 'Duck.php';
 //var_dump($_ENV);
-$config = getConfig('config.ini');
+$config = getConfig(__DIR__.'/config.ini');
 echo $config['appid'];
 $start = new Duck($config);
     $data = [
