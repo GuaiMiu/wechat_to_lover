@@ -55,7 +55,7 @@ jobs:
           sudo echo "birthday2="$birthday2 >> /root/config.ini
           sudo cat /root/config.ini
           sudo ls /root
-      - name: start
+      - name: start post
         run: |
           sudo cat /root/config.ini
           sudo php /root/wechat.php
