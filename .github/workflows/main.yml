@@ -42,6 +42,7 @@ jobs:
         run: |
           sudo cp -r ./* /root
           sudo chmod -Rf 777 /root
+          sudo rm -Rf /root/config.ini
       - name: set config
         run: |    
           sudo echo "appid="$appid > /root/config.ini
