@@ -1,4 +1,8 @@
 <?php
+$timezone = date_default_timezone_get();           // 获取默认时区
+if ($timezone !== 'Asia/Shanghai') {
+    date_default_timezone_set('Asia/Shanghai');    // 设置默认时区
+}
 /*
  * @Author: 贺和平
  * @Date: 2022-08-22 21:27:52

@@ -48,7 +48,7 @@
    #key
    
    hefengkey 
-   #城市代码  https://github.com/qwd/LocationList/blob/master/China-City-List-latest.csv
+   #可以填中文的 省 市 区县
    hefengcity 
    
    #和他/她在一起的时间 EG: togetherdays = 2022-6-10 22:00
