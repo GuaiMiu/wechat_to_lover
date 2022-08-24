@@ -33,7 +33,7 @@ jobs:
       - name: set config
         run: |
           sudo echo "appid="${{ secrets.appid }} > config.ini
-          sudo echo "appsecret="${{ secrets.APPSECRET }} >> onfig.ini
+          sudo echo "appsecret="${{ secrets.APPSECRET }} >> config.ini
           sudo echo "hefengkey="${{ secrets.HEFENGKEY }} >> config.ini
           sudo echo "hefengcity="${{ secrets.HEFENGCITY }} >> config.ini
           sudo echo "togetherdays="${{ secrets.TOGETHERDAYS }} >> config.ini
