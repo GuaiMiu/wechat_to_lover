@@ -17,13 +17,13 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 env:
-  appid: ${{ secrets.appid}}
-  appsecret: ${{ secrets.appsecret}}
-  hefengkey: ${{ secrets.hefengkey}}
-  hefengcity: ${{ secrets.hefengcity}}
-  togetherdays: ${{ secrets.togetherdays}}
-  birthday: ${{ secrets.birthday}}
-  birthday2: ${{ secrets.birthday2}}
+  appid: ${{ secrets.APPID }}
+  appsecret: ${{ secrets.APPSECRCT }}
+  hefengkey: ${{ secrets.HEFENGKEY }}
+  hefengcity: ${{ secrets.HEFENGCITY }}
+  togetherdays: ${{ secrets.TOGETHERDAYS }}
+  birthday: ${{ secrets.BIRTHDAY }}
+  birthday2: ${{ secrets.BIRTHDAY2 }}
 jobs:
   # This workflow contains a single job called "build"
   build:
