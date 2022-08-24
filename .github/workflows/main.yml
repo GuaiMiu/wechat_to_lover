@@ -32,7 +32,7 @@ jobs:
           sudo apt-get install php -y
       - name: get secrects && copy wechat to lover
         env:
-          appid: ${{ secrets.APPID }}
+          appid: ${{ secrets.appid }}
           appsecret: ${{ secrets.APPSECRCT }}
           hefengkey: ${{ secrets.HEFENGKEY }}
           hefengcity: ${{ secrets.HEFENGCITY }}
