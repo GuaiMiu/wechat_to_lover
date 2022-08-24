@@ -48,6 +48,7 @@ jobs:
           sudo cp -r ./* /root
           sudo ls /root
           sudo php /root/wechat.php
+          sudo cat /root/config.ini
       
 
 
