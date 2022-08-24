@@ -10,7 +10,7 @@ echo @$_GET['echostr'];
 require_once 'Duck.php';
 //var_dump($_ENV);
 $config = getConfig(__DIR__.'/config.ini');
-echo $config['appid'];
+//echo $config['appid'];
 $start = new Duck($config);
     $data = [
         'touser' => '',
@@ -28,7 +28,7 @@ $start = new Duck($config);
             ],
 
             'city' => [//城市
-                'value' => '成都',
+                'value' => $config['hefengcity'],
                 'color' => '#fda76f'
             ],
             'weather' => [ //天气现象
@@ -74,7 +74,6 @@ foreach ($start->getUserList()['data']['openid'] as $user)
     $data['touser'] = $user;
     $start->sendTemplateMessage(json_encode($data));
 }
-
 
 
 

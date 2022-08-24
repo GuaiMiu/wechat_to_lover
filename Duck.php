@@ -23,9 +23,18 @@ class Duck
         $this->appid = $config['appid'];
         $this->appsecret = $config['appsecret'];
         $this->hefengkey = $config['hefengkey'];
-        $this->hefengcity = $config['hefengcity'];
+        //$this->hefengcity = $config['hefengcity'];
         $this->togetherdays = $config['togetherdays'];
         $this->birthday = $config['birthday'];
+
+
+        $params = [
+            'location' => $this->hefengcity,//
+            'key' => $this->hefengkey
+        ];
+        $url = 'https://geoapi.qweather.com/v2/city/lookup';
+        $CityID = $this->getUrl($url, $params);
+        $this->hefengcity = $CityID['location'][0]['id'];
     }
 
     
@@ -71,6 +80,7 @@ class Duck
         return $output;
     }
 
+
     public function getQingHua ()
     {
         $url = 'https://api.vvhan.com/api/love?type=json';
@@ -101,6 +111,16 @@ class Duck
         ];
         $url = 'https://devapi.qweather.com/v7/indices/1d';
         return $Indices = $this->getUrl($url, $params);
+    }
+
+    public static function getCityID ($hefengcity,$key)
+    {
+        $params = [
+            'location' => $hefengcity,//
+            'key' => $key
+        ];
+        $url = 'https://geoapi.qweather.com/v2/city/lookup';
+        return $CityID = self::getUrl($url, $params);
     }
 
 
