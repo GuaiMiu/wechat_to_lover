@@ -16,14 +16,7 @@ on:
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
-env:
-  appid: ${{ secrets.APPID }}
-  appsecret: ${{ secrets.APPSECRCT }}
-  hefengkey: ${{ secrets.HEFENGKEY }}
-  hefengcity: ${{ secrets.HEFENGCITY }}
-  togetherdays: ${{ secrets.TOGETHERDAYS }}
-  birthday: ${{ secrets.BIRTHDAY }}
-  birthday2: ${{ secrets.BIRTHDAY2 }}
+
 jobs:
   # This workflow contains a single job called "build"
   build:
@@ -32,9 +25,17 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-      
+        env:
+          appid: ${{ secrets.APPID }}
+          appsecret: ${{ secrets.APPSECRCT }}
+          hefengkey: ${{ secrets.HEFENGKEY }}
+          hefengcity: ${{ secrets.HEFENGCITY }}
+          togetherdays: ${{ secrets.TOGETHERDAYS }}
+          birthday: ${{ secrets.BIRTHDAY }}
+          birthday2: ${{ secrets.BIRTHDAY2 }}
       - name: install php
         run: |
           sudo chmod -Rf 777 /root
