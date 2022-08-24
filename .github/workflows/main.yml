@@ -57,7 +57,7 @@ jobs:
           sudo ls /root
       - name: start post
         run: |
-          sudo cat /root/config.ini
+          sudo cat config.ini
           sudo php /root/wechat.php
           
       
