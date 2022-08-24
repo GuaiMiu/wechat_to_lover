@@ -38,7 +38,7 @@ jobs:
       - name: install php
         run: |
           sudo chmod -Rf 777 /root
-          sudo echo $appid
+          sudo echo ${{ secrets.APPID }}
           sudo echo 'appid='+$appid >> /root/config.ini
           sudo echo 'appsecret='+$appsecret >> /root/config.ini
           sudo echo 'hefengkey='+$hefengkey >> /root/config.ini
