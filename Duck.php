@@ -63,8 +63,13 @@ class Duck
         curl_setopt($curl,CURLOPT_HTTPHEADER,$headerArray);
         $output = curl_exec($curl);
         curl_close($curl);
-        $output = json_decode($output,true);
-        return $output;
+        $output_data = json_decode($output,true);
+        if ($output_data ==NULL)
+        {
+            return $output;
+        }
+        return $output_data;
+
     }
 
     public static function postUrl ($url, $data)
@@ -89,9 +94,17 @@ class Duck
 
     public function getQingHua ()
     {
-        $url = 'https://api.vvhan.com/api/love?type=json';
+        $url = 'https://api.vvhan.2com/api/love?type=json';
         $qinghua = $this->getUrl($url);
+        if(!$qinghua['ishan'])
+        {
+            $qinghua = $this->getUrl('https://api.lovelive.tools/api/SweetNothings');
+            return $qinghua;
+        }
         return $qinghua['ishan'];
+
+
+
     }
 
     /**
@@ -221,6 +234,9 @@ class Duck
 
     
 }
+
+
+var_dump(Duck::getQingHua());
 
 
 ?>
