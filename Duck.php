@@ -236,7 +236,7 @@ class Duck
 }
 
 
-var_dump(Duck::getQingHua());
+
 
 
 ?>
