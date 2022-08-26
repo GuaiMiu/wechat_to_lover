@@ -12,10 +12,13 @@ if ($timezone !== 'Asia/Shanghai') {
  */
 echo @$_GET['echostr'];
 require_once 'Duck.php';
-//var_dump($_ENV);
-$config = getConfig(__DIR__.'/config.ini');
-//echo $config['appid'];
+
+$ConfigPath = __DIR__.'/config.ini';
+$config = getConfig($ConfigPath);
+
 $start = new Duck($config);
+
+$weekarray=array("日","一","二","三","四","五","六");
     $data = [
         'touser' => '',
         'template_id' => $start->getTemplateList()['template_list'][0]['template_id'],//默认只给第一个模板发消息
@@ -27,10 +30,9 @@ $start = new Duck($config);
                 'color' => '#5ecf3b'
             ],
             'week' => [
-                'value' => date('Y年n月j日 H时i分s秒'),
+                'value' => $weekarray[date("w")],
                 'color' => '#5ecf3b'
             ],
-
             'city' => [//城市
                 'value' => $start->getCity(),
                 'color' => '#fda76f'
