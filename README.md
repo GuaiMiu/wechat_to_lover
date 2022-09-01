@@ -99,6 +99,9 @@ EG:![image-20220823191217969](assets/image-20220823191217969.png)
 气温:{{temp.DATA}}
 湿度:{{humidity.DATA}}
 穿衣指数:{{indices.DATA}}
+现有确诊:{{currentConfirm.DATA}}
+新增确诊:{{lastLocalSureNew.DATA}}
+新增无症状:{{lastIncrHideNew.DATA}}
 我们已经在一起{{togetherdays.DATA}}了
 距离扁嘴伦生日还有{{birthday.DATA}}天
 距离大公鸡生日还有{{birthday2.DATA}}天

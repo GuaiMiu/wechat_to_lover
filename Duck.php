@@ -226,8 +226,32 @@ class Duck
         return $days;
     }
 
-    
-    
+    /**
+     * 新冠疫情
+     */
+    public function getFeiYan()
+    {
+        $data = $this->getUrl('https://cdn.mdeer.com/data/yqstaticdata.js');
+        $data = ltrim($data,'callbackstaticdata(');
+        $data = rtrim($data,')');
+        $data = json_decode($data,true);
+
+        foreach ($data['cityLists'] as $city)
+        {
+            if($city['city'] == "成都")
+            {
+                $feiYan = [
+                    "新增确诊" => $city['lastLocalSureNew'],
+                    "新增无症状" => $city['lastIncrHideNew'],
+                    "现有确诊" => $city['currentConfirm']
+                ];
+                return $feiYan;
+            }
+
+        }
+
+
+    }
 
     
 }
